@@ -1,0 +1,48 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Dojo Contacts</title>
+		<link rel="stylesheet" href="style3.css">
+		<script type="text/javascript" src='http://code.jquery.com/jquery-1.10.2.min.js'></script> 
+		<script>
+
+			$(document).on('click','.contact',function(){
+				var about = $(this).attr('description');
+				$(this).fadeOut(function(){
+					$(this).html('<p>'+about+'</p>').attr('class','description').fadeIn('slow');
+				});
+			});
+
+			$(document).ready(function(){
+
+				$('form').submit(function(){
+					var first = $('input[name="first"]').val();
+					var last = $('input[name="last"]').val();
+					var desc = $('textarea').val();
+
+					$('.contact_output').append('<div class="contact" description="'+desc+'"><h1>'+first+' '+last+'</h1><h4>Click To See Description!</h4></div>');
+
+					$('input[name="first"]').val('');
+					$('input[name="last"]').val('');
+					$('textarea').val('');
+
+					return false;
+				});
+
+			});
+		</script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="user_input">
+				<form action="blah.php" method="post">
+					First name: <input type="text" name="first" value=""/></br>
+					Last name: <input type="text" name="last" value=""/></br>
+					Description: <textarea name="description"></textarea></br>
+					<input type="submit" value="Add User"/>
+				</form>
+			</div>
+			<div class="contact_output"></div>
+		</div>
+	</body>
+</html>

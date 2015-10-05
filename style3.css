@@ -1,0 +1,40 @@
+.container{
+	width: 600px;
+	padding: 10px;
+	background-color: black;
+}
+.user_input{
+	width: 250px;
+	display: inline-block;
+	background-color: orange;
+}
+	.user_input form{
+		margin: 0px;
+		padding: 5px;
+		text-align: right;
+	}
+	.user_input input, textarea{
+		display: inline-block;
+		margin: 3px 0px;
+		width: 150px;
+	}
+.contact_output{
+	width: 346px;
+	display: inline-block;
+	vertical-align: top;
+}
+	.contact, .description{
+		height: 120px;
+		margin-bottom: 2px;
+		border: 2px solid white;
+		text-align: center;
+		color: white;
+	}
+	.contact h4{
+		color: orange;
+	}
+	.description p{
+		font-family: sans-serif;
+		font-weight: bold;
+		font-size: 1em;
+	}
